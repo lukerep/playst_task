@@ -7,30 +7,27 @@
 
 .body-container {
   flex-grow: 1;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: 5fr 3fr;
+  grid-template-areas:
+    "lrg ."
+    "lrg ."
+    "med ."
+  ;
   margin: 3rem;
 }
 
 .panel {
   border: 1px solid black;
-  flex-grow: 1;
   background-color: white;
   margin: 0.5rem;
 }
 
 .panel-lrg {
-  min-height: 45%;
-  min-width: 55%;
+  grid-area: lrg;
 }
 
 .panel-med {
-  min-height: 45%;
-  min-width: 55%;
-}
-
-.panel-sml {
-  min-height: 30%;
-  min-width: 33%;
+  grid-area: med;
 }
